@@ -15,22 +15,22 @@ void printResult(enum Result result) {
     case SUCESS:
         break;
     case TOO_MANY_ARGS:
-        fprintf(stdout, "error code: %s\n", TOO_MANY_ARGS_ERROR);
+        fprintf(stdout, "error code: %s", TOO_MANY_ARGS_ERROR);
         break;
     case TOO_FEW_ARGS:
-        fprintf(stdout, "error code: %s\n", TOO_FEW_ARGS_ERROR);
+        fprintf(stdout, "error code: %s", TOO_FEW_ARGS_ERROR);
         break;
     case DIVISION_BY_ZERO:
-        fprintf(stdout, "error code: %s\n", DIVISION_BY_ZERO_ERROR);
+        fprintf(stdout, "error code: %s", DIVISION_BY_ZERO_ERROR);
         break;
     case UNSUPPORTED_OPPERATION:
-        fprintf(stdout, "error code: %s\n", UNSUPPORTED_OPPERATION_ERROR);
+        fprintf(stdout, "error code: %s", UNSUPPORTED_OPPERATION_ERROR);
         break;
     case INVALID_INPUT:
-        fprintf(stdout, "error code: %s\n", INVALID_INPUT_ERROR);
+        fprintf(stdout, "error code: %s", INVALID_INPUT_ERROR);
         break;
     case UNKNOWN:
-        fprintf(stdout, "error code: %s\n", UNKNOWN_ERROR);
+        fprintf(stdout, "error code: %s", UNKNOWN_ERROR);
         break;
     default:
         break;
