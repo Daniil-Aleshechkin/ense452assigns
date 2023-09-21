@@ -14,13 +14,8 @@ char** read_args(enum Result* result) {
     }
 
     if (inputStringBuffer[0] == 'q' || inputStringBuffer[0] == 'Q') {
-        char** outputArgStrings = (char**)malloc(sizeof(char*)*5);
-
-        outputArgStrings[0] = "Q";
-        for (int i = 1; i < 5; i++) {
-            outputArgStrings[i] = 0x00;
-        }
-        return outputArgStrings;
+        *result = EXIT_REQUEST;
+        return NULL;
     } else {    
         return parseArgs(inputStringBuffer, result);    
     }

@@ -10,6 +10,10 @@ int main() {
     while (true) {
         enum Result result = readInput(calcultor);
         
+        if (result == EXIT_REQUEST) {
+            break;
+        }
+
         if (result == SUCESS) {
             calculate(calcultor);
             printOutput(calcultor);
