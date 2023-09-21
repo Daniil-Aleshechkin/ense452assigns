@@ -70,7 +70,7 @@ char* parseArg(char* instr, int* inStrIndex, enum Result* result) {
         return NULL;
     }
 
-    char* outstr = (char*)malloc(sizeof(char) * (long long unsigned int)(argLength + 1));
+    char* outstr = (char*)malloc(sizeof(char) * (size_t)(argLength + 1));
     
     // Copy the string
     for (int i = 0; i < argLength; i++) {
