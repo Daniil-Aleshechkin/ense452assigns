@@ -1,0 +1,12 @@
+testing
+
+*.o
+*.exe
+*.txt
+
+assign1/*.o
+assign1/*.exe
+assign1/*.txt
+
+.vscode
+
