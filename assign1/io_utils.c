@@ -50,13 +50,13 @@ char** parseArgs(char* bufferPtr, enum Result* result) {
 
 char* parseArg(char* instr, int* inStrIndex, enum Result* result) {
     // Remove starting in spaces
-    while (instr[*inStrIndex] == ' ') {
+    while (instr[*inStrIndex] == ' ' || instr[*inStrIndex] == '\t') {
         *inStrIndex = *inStrIndex + 1;
     }
 
     // Find out how much mem we need to allocate
     int argLength = 0;
-    while (instr[argLength + *inStrIndex] != ' ' && instr[argLength + *inStrIndex] != 0x00 && instr[argLength + *inStrIndex] != '\n') {
+    while (instr[argLength + *inStrIndex] != ' ' && instr[argLength + *inStrIndex] != '\t' && instr[argLength + *inStrIndex] != 0x00 && instr[argLength + *inStrIndex] != '\n') {
         argLength++;
     }
 
