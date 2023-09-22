@@ -64,7 +64,7 @@ bool validateNumberString(char* number) {
     int i = 0;
     while(number[i] != 0x00) {
         if (number[i] == '-') {
-            if (i != 0 || isNegative) {
+            if ( isNegative && i != exponentLocation - 1) {
                 return false;
             }
 
