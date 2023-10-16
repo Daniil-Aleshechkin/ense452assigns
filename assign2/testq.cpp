@@ -32,6 +32,95 @@ bool testQueueEquality( Queue & q, std::vector<Data> const & array)
     return true;
 }
 
+/**
+   Assert that the queue correctly inserts an element in the middle of the queue
+ */
+bool testQueueInsertMid() {
+
+    Queue q;
+    q.insert(Data(1,2));
+    q.insert(Data(3,4));
+    q.insert(Data(5,6));
+    q.insert(Data(-4,-5), 2);
+
+    std::vector<Data> expectedResult;
+    expectedResult.push_back(Data(1,2));
+    expectedResult.push_back(Data(3,4));
+    expectedResult.push_back(Data(-4,-5));
+    expectedResult.push_back(Data(5,6));
+
+    return testQueueEquality(q, expectedResult);
+}
+
+
+/**
+   Asserts the queue inserts an element at the head
+ */
+bool testQueueInsertHead() {
+
+    Queue q;
+    q.insert(Data(1,2));
+    q.insert(Data(3,4));
+    q.insert(Data(5,6));
+    q.insert(Data(0,1), 0);
+
+    std::vector<Data> expectedResult;
+    expectedResult.push_back(Data(0,1));
+    expectedResult.push_back(Data(1,2));
+    expectedResult.push_back(Data(3,4));
+    expectedResult.push_back(Data(5,6));
+
+    return testQueueEquality(q, expectedResult);
+}
+
+/**
+   Asserts the queue inserts an element at the second position
+ */
+bool testQueueInsertSecond() {
+
+    Queue q;
+    q.insert(Data(1,2));
+    q.insert(Data(3,4));
+    q.insert(Data(5,6));
+    q.insert(Data(0,2), 1);
+
+    std::vector<Data> expectedResult;
+    expectedResult.push_back(Data(1,2));
+    expectedResult.push_back(Data(0,2));
+    expectedResult.push_back(Data(3,4));
+    expectedResult.push_back(Data(5,6));
+    
+    return testQueueEquality(q, expectedResult);
+
+}
+
+/**
+   Asserts the queue inserts an element at the tail
+ */
+bool testQueueInsertTail() {
+
+    Queue q;
+    q.insert(Data(1,2));
+    q.insert(Data(3,4));
+    q.insert(Data(5,6));
+    q.insert(Data(0,3), 3);
+
+    std::vector<Data> expectedResult;
+    expectedResult.push_back(Data(1,2));
+    expectedResult.push_back(Data(3,4));
+    expectedResult.push_back(Data(5,6));
+    expectedResult.push_back(Data(0,3));
+    
+    return testQueueEquality(q, expectedResult);
+
+}
+
+/**
+   Asserts the queue fails when you attempt to insert outside the range
+ */
+bool testQueueFailOutOfRange() {
+    return true;
+}
 
 int main()
 {
@@ -76,13 +165,9 @@ int main()
     found = q1.search(temp3);
     assert(found == false);
 
-    Queue q;
-    q.insert(Data(1,2));
-    q.insert(Data(3,4));
-    q.insert(Data(5,6));
-    q.insert(Data(-2,-3), 1);
-    q.insert(Data(-4,-5), 3);
-    q.insert(Data(2,3), 0);
-    q.insert(Data(2,3), 6);
-    q.print();
+    assert(testQueueInsertHead());
+    assert(testQueueInsertSecond());
+    assert(testQueueInsertMid());
+    assert(testQueueInsertTail());
+
 }
