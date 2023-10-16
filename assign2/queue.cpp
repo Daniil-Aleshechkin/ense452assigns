@@ -63,7 +63,7 @@ void Queue::insert(Data d)
 
 void Queue::insert(Data d, unsigned int position) {
     if (position > size()) {
-        cerr << "Error: The position must be in the list";
+        cerr << "insert: range error.";
         
     }
 
