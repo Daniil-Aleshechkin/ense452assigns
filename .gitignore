@@ -8,5 +8,9 @@ assign1/*.o
 assign1/*.exe
 assign1/*.txt
 
+assign2/*.o
+assign2/*.exe
+assign2/*.txt
+
 .vscode
 
