@@ -115,12 +115,6 @@ bool testQueueInsertTail() {
 
 }
 
-/**
-   Asserts the queue fails when you attempt to insert outside the range
- */
-bool testQueueFailOutOfRange() {
-    return true;
-}
 
 int main()
 {
@@ -169,5 +163,4 @@ int main()
     assert(testQueueInsertSecond());
     assert(testQueueInsertMid());
     assert(testQueueInsertTail());
-
 }
