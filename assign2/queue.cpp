@@ -67,6 +67,7 @@ void Queue::insert(Data d, unsigned int position) {
         
     }
 
+    // Get the current node at that position. 
     QElement* curr = head;
     if (position != 0) {
         for (unsigned int i = 0; i < position - 1; i++) {
@@ -76,17 +77,18 @@ void Queue::insert(Data d, unsigned int position) {
 
     QElement* el = new QElement(d);
 
-    if (position == 0) {
+    if (position == 0) { // Update head node
         el->next = curr;
         head = el;
-    } else if (position == size()) {
+    } else if (position == size()) { // Update tail node
         curr->next = el;
         tail = el;
-    } else {
+    } else { // Update in the middle 
         QElement* tmp = curr->next;
         curr->next = el;
         el->next = tmp;
     }
+
     nelements++;
 }
 
