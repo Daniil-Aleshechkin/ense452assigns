@@ -64,7 +64,7 @@ void Queue::insert(Data d)
 void Queue::insert(Data d, unsigned int position) {
     if (position > size()) {
         cerr << "insert: range error.";
-        
+        exit(3);
     }
 
     // Get the current node at that position. 
